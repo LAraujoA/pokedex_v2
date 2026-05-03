@@ -16,8 +16,7 @@ header {
 header h1 {
   font-size: 3rem;
   background: linear-gradient(135deg, #e63946 0%, #ff8c42 50%, #ffd700 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #e63946;
   background-clip: text;
   margin-bottom: 16px;
   filter: drop-shadow(0 0 16px rgba(230, 57, 70, 0.35));

@@ -35,7 +35,7 @@ export function TypeFilter({ types, selectedType, onSelectType }) {
           className="type-filter-toggle-label"
           style={selectedColor ? { color: selectedColor } : {}}
         >
-          🎮 Filtrar: <strong>{selectedLabel}</strong>
+          <strong>{selectedLabel}</strong>
         </span>
         <span className={`type-filter-chevron${open ? " open" : ""}`}>›</span>
       </button>
