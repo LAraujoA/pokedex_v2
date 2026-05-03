@@ -111,18 +111,23 @@ function App() {
         loading ? (
           <div className="loading">Cargando cartas…</div>
         ) : (
-          <main className="grid">
-            {filtered.map((pokemon) => (
-              <PokemonCard
-                key={pokemon.id}
-                pokemon={pokemon}
-                price={calcPrice(pokemon)}
-                isPurchased={purchasedIds.includes(pokemon.id)}
-                onClick={() => setSelectedPokemon(pokemon)}
-                onBuy={(pokemon) => setBuyingPokemon(pokemon)}
-              />
-            ))}
-          </main>
+          <>
+            <p className="results-count">
+              {filtered.length} carta{filtered.length !== 1 ? "s" : ""} encontrada{filtered.length !== 1 ? "s" : ""}
+            </p>
+            <main className="grid">
+              {filtered.map((pokemon) => (
+                <PokemonCard
+                  key={pokemon.id}
+                  pokemon={pokemon}
+                  price={calcPrice(pokemon)}
+                  isPurchased={purchasedIds.includes(pokemon.id)}
+                  onClick={() => setSelectedPokemon(pokemon)}
+                  onBuy={(pokemon) => setBuyingPokemon(pokemon)}
+                />
+              ))}
+            </main>
+          </>
         )
       ) : (
         <MyCollection
