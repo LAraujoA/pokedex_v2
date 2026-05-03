@@ -428,3 +428,64 @@ header h1 { text-transform: none; }
   color: #ffd700;
   margin-bottom: 20px;
 }
+
+/* ── Imagen en modal de detalle ────────────────────────── */
+.modal-content img { max-width: 100%; height: auto; }
+
+/* ── Responsive: tablets (≤768px) ─────────────────────── */
+@media (max-width: 768px) {
+  .app { padding: 12px; }
+
+  header { padding: 20px 0 14px; }
+
+  header h1 { font-size: 2rem; margin-bottom: 12px; }
+
+  .search-bar { width: 100%; }
+  .search-bar input { width: 100%; }
+
+  .tabs { flex-wrap: wrap; gap: 8px; }
+  .tab { padding: 8px 18px; font-size: 0.9rem; }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .notification {
+    left: 12px;
+    right: 12px;
+    top: 12px;
+    max-width: none;
+  }
+
+  .modal-content { padding: 20px 16px; }
+
+  .close-btn { width: 36px; height: 36px; font-size: 1rem; }
+
+  .price-value { font-size: 1.6rem; }
+
+  .empty-collection { padding: 60px 16px; }
+}
+
+/* ── Responsive: móvil (≤480px) ───────────────────────── */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.7rem; }
+
+  .tab { padding: 7px 14px; font-size: 0.85rem; }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .type-filters { gap: 6px; padding: 8px 0; }
+  .type-filters button { padding: 4px 10px; font-size: 0.75rem; }
+
+  .modal-content { padding: 16px 12px; }
+
+  .buy-modal-card-preview img { width: 90px; height: 90px; }
+
+  .empty-collection { padding: 40px 12px; }
+  .empty-icon { font-size: 3rem; }
+}
