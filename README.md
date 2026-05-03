@@ -4,7 +4,7 @@
 
 ## Clonar el repositorio:
 ```bash
-git clone https://github.com/LAraujoA/Pokedex.git
+git clone https://github.com/LAraujoA/pokedex_v2.git
 ```
 
 ## Ingresar a la carpeta del repositorio
