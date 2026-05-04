@@ -1,116 +1,147 @@
+/* PokéCards Market - Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  /* Colores principales - temática mercado de cartas */
+  --primary: #ff2323fb;
+  --primary-dark: #FFA500;
+  --secondary: #FF6B6B;
+  --secondary-dark: #EE5A24;
+  --accent: #4ECDC4;
+  --dark-bg: #0f0c29;
+  --mid-bg: #1a1a3e;
+  --card-bg: rgba(30, 30, 60, 0.95);
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-dim: rgba(255, 255, 255, 0.5);
+  --border-glow: rgba(255, 215, 0, 0.3);
+  
+  /* Tipografía divertida y moderna */
+  --sans: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --heading: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'Fira Code', 'Courier New', monospace;
+  
+  /* Sombras y efectos */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --glow-gold: 0 0 15px rgba(255, 215, 0, 0.4);
+  
+  font-size: 16px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
+/* Forzamos modo oscuro divertido (sin preferencias del sistema) */
 body {
-  margin: 0;
+  font-family: var(--sans);
+  background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #24243e 100%);
+  color: var(--text-light);
+  min-height: 100vh;
 }
 
+/* Root container estilo carta gigante */
 #root {
-  width: 1126px;
-  max-width: 100%;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    border-inline: none;
-    width: 100%;
-  }
+  background: transparent;
+  border: none;
+  position: relative;
 }
 
-h1,
+/* Títulos principales */
+h1 {
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #FFD700, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
 h2 {
   font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.3px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+h3 {
+  font-family: var(--heading);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-light);
 }
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
+
+/* Párrafos y texto general */
 p {
   margin: 0;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* Enlaces */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
+a:hover {
+  color: var(--primary-dark);
+  text-shadow: var(--glow-gold);
+}
+
+/* Código (si se usa en algún lado) */
 code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  font-family: var(--mono);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  border: 1px solid var(--border-glow);
+}
+
+/* Scrollbar personalizada (global) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  box-shadow: var(--glow-gold);
+}
+
+::selection {
+  background: var(--primary);
+  color: #1a1a2e;
 }
